@@ -16,6 +16,6 @@ container_name=`echo 'bWVnYV92cG4K' | base64 --decode`
 ##start install service
 ContainerID=$(docker run -d --privileged -p 1194:1194/udp -p 443:443/tcp $image_name)
 ## run image
-docker run -t -i -p 4444:8080 --name $container_name --volumes-from $ContainerID $image_name serveconfig
+docker run -t -i -p 8080:8080 --name $container_name --volumes-from $ContainerID $image_name serveconfig
 ## go get ovpn file
 
